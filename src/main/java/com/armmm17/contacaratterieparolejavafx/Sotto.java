@@ -19,8 +19,8 @@ public class Sotto extends HBox {
         this.main = main;
         setMinHeight(V.HEIGHT/2);
         setBackground(new Background(new BackgroundFill(Paint.valueOf("Blue"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        this.charCount = new Label("Caratteri: "+main.getSopra().getTf().getLength());
+        getMain();
+        this.charCount = new Label("Caratteri: "+getMain().getSopra().getCharCount());
 
         this.getChildren().add(charCount);
 

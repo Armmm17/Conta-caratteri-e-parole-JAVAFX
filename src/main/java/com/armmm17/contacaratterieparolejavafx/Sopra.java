@@ -34,18 +34,16 @@ public class Sopra extends HBox {
             public void handle(ActionEvent event) {
 
                 String input = getMain().getSopra().getTf().getText();
+                System.out.println(input);
 
                 boolean ok = true;
-                int in = 0;
-                try{ in = Integer.parseInt(input); }
-                catch(Exception e){
-                    getMain().getSopra().getTf();
-                    ok = false;
-                }
+
 
 
                 if(ok){
                     getMain().getSopra().setCharCount(input.length());
+                    System.out.println(getCharCount());
+                    Sotto.
 
                 }
 
@@ -68,5 +66,9 @@ public class Sopra extends HBox {
 
     public void setCharCount(int charCount) {
         this.charCount = charCount;
+    }
+
+    public int getCharCount() {
+        return charCount;
     }
 }
