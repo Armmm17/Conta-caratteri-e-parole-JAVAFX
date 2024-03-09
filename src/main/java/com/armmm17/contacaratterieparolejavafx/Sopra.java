@@ -41,9 +41,17 @@ public class Sopra extends HBox {
 
 
                 if(ok){
-                    getMain().getSopra().setCharCount(input.length());
+                    //set value for charcount
+                    getMain().getSopra().setCharCount(getMain().getSopra().getTf().getText().length());
+                    //update label charcount
+                    getMain().getSotto().getCharCount().setText("Caratteri: "+getMain().getSopra().getCharCount());
+                    //DEbug console show word & charcount
                     System.out.println(getCharCount());
-                    Sotto.
+
+                    getMain().getSopra().setWordCount(countWord(getMain().getSopra().getTf().getText()));
+                    getMain().getSotto().getWordCount().setText("\t\tParole: "+getMain().getSopra().getWordCount());
+                    System.out.println(getWordCount());
+
 
                 }
 
@@ -69,6 +77,15 @@ public class Sopra extends HBox {
     }
 
     public int getCharCount() {
-        return charCount;
+        return this.charCount;
+    }
+
+    public int getWordCount() {return this.wordCount;}
+
+    public void setWordCount(int wordCount) {this.wordCount = wordCount;}
+
+    public int countWord(String str) {
+        int countWords = str.split("\\s").length;
+        return countWords;
     }
 }

@@ -25,8 +25,11 @@ public class Main extends Application {
         root.getChildren().add(sopra);
         root.getChildren().add(sotto);
 
+
+
         stage.setTitle(V.TITOLO);
         stage.setScene(scene);
+        stage.setResizable(true);
         stage.show();
     }
 
