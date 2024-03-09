@@ -29,7 +29,8 @@ public class Main extends Application {
 
         stage.setTitle(V.TITOLO);
         stage.setScene(scene);
-        stage.setResizable(true);
+        stage.setResizable(false);
+        
         stage.show();
     }
 
