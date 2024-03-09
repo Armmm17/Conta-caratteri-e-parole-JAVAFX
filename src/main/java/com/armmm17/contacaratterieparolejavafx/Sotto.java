@@ -9,13 +9,13 @@ import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
 
 public class Sotto extends HBox {
+
     private Main main;
     private Label charCount;
-
     private Label wordCount;
 
-
     public Sotto(Main main){
+
         this.main = main;
         setMinHeight(V.HEIGHT/2);
         setBackground(new Background(new BackgroundFill(Paint.valueOf("Blue"), CornerRadii.EMPTY, Insets.EMPTY)));

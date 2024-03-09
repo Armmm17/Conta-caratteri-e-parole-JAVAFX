@@ -1,7 +1,6 @@
 package com.armmm17.contacaratterieparolejavafx;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
@@ -25,12 +24,9 @@ public class Main extends Application {
         root.getChildren().add(sopra);
         root.getChildren().add(sotto);
 
-
-
         stage.setTitle(V.TITOLO);
         stage.setScene(scene);
         stage.setResizable(false);
-        
         stage.show();
     }
 

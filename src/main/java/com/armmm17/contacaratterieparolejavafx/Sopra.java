@@ -20,7 +20,9 @@ public class Sopra extends HBox {
     private Button btn;
     private int charCount;
     private int wordCount;
+
     public Sopra(Main main){
+
         this.main = main;
         setMinHeight(V.HEIGHT/2);
         setBackground(new Background(new BackgroundFill(Paint.valueOf("red"), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -30,30 +32,28 @@ public class Sopra extends HBox {
         this.btn = new Button("Invio");
 
         this.btn.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent event) {
 
+                // Textfiueld to String
                 String input = getMain().getSopra().getTf().getText();
+                //DEBUG console shw the converted String
                 System.out.println(input);
 
-                boolean ok = true;
+                //set value for charcount
+                getMain().getSopra().setCharCount(getMain().getSopra().getTf().getText().length());
+                //update label charcount in Sotto
+                getMain().getSotto().getCharCount().setText("Caratteri: "+getMain().getSopra().getCharCount());
+                //DEBUG console show cahrCount
+                System.out.println(getCharCount());
 
-
-
-                if(ok){
-                    //set value for charcount
-                    getMain().getSopra().setCharCount(getMain().getSopra().getTf().getText().length());
-                    //update label charcount
-                    getMain().getSotto().getCharCount().setText("Caratteri: "+getMain().getSopra().getCharCount());
-                    //DEbug console show word & charcount
-                    System.out.println(getCharCount());
-
-                    getMain().getSopra().setWordCount(countWord(getMain().getSopra().getTf().getText()));
-                    getMain().getSotto().getWordCount().setText("\t\tParole: "+getMain().getSopra().getWordCount());
-                    System.out.println(getWordCount());
-
-
-                }
+                // set value for word count
+                getMain().getSopra().setWordCount(countWord(getMain().getSopra().getTf().getText()));
+                // update Label wordCount in Sotto
+                getMain().getSotto().getWordCount().setText("\t\tParole: "+getMain().getSopra().getWordCount());
+                //DEBUG console show wordCount
+                System.out.println(getWordCount());
 
             }
         });
@@ -62,6 +62,7 @@ public class Sopra extends HBox {
         this.getChildren().add(label);
         this.getChildren().add(tf);
         this.getChildren().add(btn);
+
     }
 
     public Main getMain() {
@@ -85,7 +86,6 @@ public class Sopra extends HBox {
     public void setWordCount(int wordCount) {this.wordCount = wordCount;}
 
     public int countWord(String str) {
-        int countWords = str.split("\\s").length;
-        return countWords;
+        return str.split("\\s").length;
     }
 }
